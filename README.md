@@ -32,3 +32,8 @@ python -m unittest test_all
 ├── chart_widget.py       Live matplotlib chart
 ├── controls_panel.py     Buttons, slider, dropdown
 └── test_all.py           28 unit tests
+```
+##Design Patterns
+```
+All four patterns ended up in the code naturally. I used Observer so the simulation engine never has to know anything about the UI, it just fires callbacks and MainWindow decides what to do with them. MVC came from keeping sensor.py and simulation.py completely free of Tkinter imports so the logic stays totally separate from the display. Factory is just SensorFactory.create_defaults() in simulation.py, one method that builds all three sensors so there is a single place to change if I wanted to add more. Thread marshalling was necessary because the simulation runs on a background thread and Tkinter isn't thread-safe, so every UI update gets pushed back to the main thread with self.after(0, fn).
+```
