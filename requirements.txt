@@ -1,0 +1,4 @@
+# Tkinter is included with Python's standard library (no pip install needed).
+# On some Linux distros you may need: sudo apt install python3-tk
+matplotlib>=3.8.0
+pytest>=8.0.0   # optional, for running tests with pytest
