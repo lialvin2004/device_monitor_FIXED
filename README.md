@@ -1,6 +1,6 @@
 # Device Monitor Dashboard
 
-This is a desktop app I built that simulates live sensor readings for temperature, humidity, and pressure. It updates every second, shows a live chart, and highlights a warning when a reading crosses a threshold you can set with the slider. I went with Python and Tkinter because it ships with Python so there's nothing extra to install for the GUI, and matplotlib handles the chart cleanly with its TkAgg backend. I kept all the logic files completely separate from the UI so the core stuff is easy to test without needing a display.
+This is a desktop app I built that simulates live sensor readings for temperature, humidity, and pressure. It updates every second, shows a live chart, and highlights a warning when a reading crosses a threshold you can set with the slider. I went with Python and Tkinter (OPTION A) because it ships with Python so there's nothing extra to install for the GUI, and matplotlib handles the chart cleanly with the backend. I kept all the logic files completely separate from the UI so the core stuff is easy to test without needing a display.
 
 The code is split into a model layer (sensor.py, simulation.py), a view layer (the widgets), and a controller (main_window.py) that wires everything together. The simulation runs on a background thread and uses callbacks to notify the UI, so Tkinter stays responsive. I also added CSV export, a dark/light theme toggle, and 28 unit tests as bonus features.
 
